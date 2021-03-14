@@ -1,0 +1,169 @@
+*{
+    margin: 0;
+    padding: 0;    
+}
+body{
+    background-color: rgb(58, 49, 49);
+}
+.header-cabeçalho, .header-menu{
+    text-align: center;
+    word-spacing: 40px;
+    padding: 10px; 
+    background-color: rgb(34, 33, 33);
+    color: white;
+}
+.index, .sobre-mim, .habilidades-minhas, .projetos-meus, .contatos-meus{
+    color: white;
+    text-decoration: none;
+}
+.nome-destaque{
+    color: red;
+}
+.texto-habilidades, .texto-projeto, .texto-contato{
+    padding: 60px;
+    font-family: "Gabriola", Times, serif;
+    font-size: 24px;
+}
+.texto2-habilidades{
+    text-align: center;
+    font-size: 32px;
+    font-family: "Gabriola", Times, serif;
+}
+
+.formulario-contato, .name, .texto-email, .texto-textarea, .texto-contato{
+    text-align: left;
+    font-size: 32px;
+    margin: 10px;
+}
+.nome-contato, .email-contato{
+    margin: 10px;
+    padding: 10px;
+}
+.nome-menu{
+    text-align: left;
+    margin-top: -40px;
+    
+    
+}
+.menu-nome{
+    text-align: left;
+    word-spacing: 0;
+    
+}
+.meio{
+    text-align: center;
+    padding: 50px;
+    font-size: 32px;
+}
+.meio-sobre{
+    text-align: right;
+    margin: 30px;
+    font-size: 32px;
+    font-family: "Gabriola", Times, serif;
+    
+}
+.box1, .box2, .box3, .box4{
+    width: 100px;
+    height: 100px;
+    margin: 70px; 
+    position: relative; 
+    margin: 115px; 
+}
+.meio-imagens, .habilidades-imagens{
+    text-align: center;
+    margin-top: -80px;
+    word-spacing: 250px;
+    
+
+}
+.insta, .git, .zap{
+    width: 40px;
+    height: 40px;
+    margin: 8px; 
+    background-color:white;
+    border-radius: 50px; 
+    color: white;  
+}
+.social{
+    text-align: center;
+    margin-bottom: -60px;
+    color: white;
+    font-size: 16px;
+}
+.container{
+    text-align: center;
+    margin-top: 60px;
+
+    
+}
+.container-sobre{
+    text-align: center;
+
+}
+.social-sobre{
+    text-align: center;
+    
+}
+.rodape-sobre{
+    position: relative;
+    top: 200px;
+    
+}
+.rodape{
+    background-color: rgb(3, 3, 3);
+    position: relative;
+    bottom: -80px;
+    
+}
+.imagem-projeto{
+    text-align: center;
+    word-spacing: 100px;
+    margin-bottom: 50px;
+}
+.confeitaria, .sistema{
+    width: 250px;
+    height: 400px;
+}
+.nome-g, .nome-react{
+    font-family: "Gabriola", Times, serif;
+}
+.foto-sobre{
+    width: 600px;
+    height: 500px;
+    position: relative;
+    left: 60px;
+    bottom: 300px;
+    border-radius: 30px;
+    margin-bottom: -300px;
+}
+.meio-habilidades{
+    position: relative;
+    bottom: 80px;
+    margin-bottom: -200px;
+}
+.prazo{
+    text-align: left;
+    margin-left: 140px;
+    margin-top: -100px;
+    color: white;
+
+}
+.bonito{
+    position: relative;
+    left: 620px;
+    top: -50px;
+    color: white;
+}
+.duvida{
+    position: relative;
+    left: 1070px;
+    top: -40px;
+    color: white;
+}
+.relogio, .teclado, .balao{
+    position: relative;
+    margin-top: 150px;
+    width: 200px;
+    height: 200px;
+    bottom: 120px;
+}
