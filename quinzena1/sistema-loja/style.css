@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
 }
-.cabeçalho-nome, .loja, .loja-estoque, .nome-funcionario{
+.cabeçalho-nome, .loja, .loja-estoque, .nome-funcionario, .nome-cadastro, .nome-historico{
     background-color: rgb(41, 40, 40);
     
 }
@@ -18,7 +18,7 @@ h1,.nome, .estoque-nome, .loja-funcionario{
     color: whitesmoke;
     margin-left: 0;
 }
-.menu,.ini,.cte, .ad, .fos, .menu-add, .pag, .cles, .adpto, .func, .menu-estoque, .menu-funcionario{
+.menu,.ini,.cte, .ad, .fos, .menu-add, .pag, .cles, .adpto, .func, .menu-estoque, .menu-funcionario, .menu-cadastro, .cp, .hv, .menu-historico{
     background-color: rgb(70, 69, 69);
     padding: 8px;
     color: white;
@@ -30,6 +30,21 @@ h2, .estoque, .funcionario{
 .compras, .descricao{
     font-size: 24px;
 }
+.compras, .a-produto{
+    text-align: center;
+    padding: 10px;
+}
+.input, .p-input, .pr-input, .pro-input, .prod-input{
+    border-radius: 40px;
+}
+.foto{
+    position: relative;
+    right: 30px;
+}
+.p-input{
+    margin: auto;
+}
+
 .marca{
     background-color: rgb(207, 205, 205);
     position: relative;
@@ -58,7 +73,7 @@ h2, .estoque, .funcionario{
     bottom: 0;
     font-size: 24px;
 }
-.rodape, .rodape-funcionarios, .rodape-add, .rodape-estoque{
+.rodape, .rodape-funcionarios, .rodape-add, .rodape-estoque, .rede-cadastro, .rede-historico{
     background-color: rgb(41, 40, 40);
     height: 40px;
     margin-bottom: 100px;
@@ -93,4 +108,56 @@ h2, .estoque, .funcionario{
     font-size: 48px;
     margin: 10px;
 }
+.item-cadastro, .tamanho-cadastro, .cor-cadastro, .quantidade-cadastro, .pagamento-cadastro{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+}
+.rede-cadastro, .rede-historico, .rodape-funcionarios, .rodape-add{
+    position: relative;
+    top: 180px;  
+}
+.container{
+    width: 600px;
+    height: 300px;
+    background-color: rgb(70, 69, 69);
+    position: relative;
+    left: 400px;
+    top: 30px;
+
+    
+}
+th{
+    padding: 20px;
+    position: relative;
+    left: 0;
+    
+}
+td{
+    padding: 5px;
+    
+
+}
+.ta-estoque{
+    border-collapse: collapse;
+}
+.data-historico{
+    text-align: center;
+    margin-top: 40px;
+}
+tr:first-of-type, .ta-estoque{
+    background-color: grey;
+}
+tr:nth-last-child(2){
+    background-color: rgb(233, 231, 231);
+}
+tr:nth-last-child(4){
+    background-color:rgb(233, 231, 231);
+}
+tr:nth-last-child(6){
+    background-color: rgb(233, 231, 231);
+}
+
+
+
 
