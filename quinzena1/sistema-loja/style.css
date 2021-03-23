@@ -64,8 +64,8 @@ h2, .estoque, .funcionario{
     background-color: grey;
 }
 .marca-roupa{
-    height: 100%;
-    margin-left: 100px;
+    position: relative;
+    left: 100px;
     
 }
 .sociais{
