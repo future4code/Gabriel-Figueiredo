@@ -1,0 +1,10 @@
+.imagem-endereco > img{
+    width: 30px;
+    height: 30px;
+}
+.imagem-endereco{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border: 1px solid black;
+}

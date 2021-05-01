@@ -1,0 +1,11 @@
+.imagem-email > img{
+    width: 30px;
+    height: 30px;
+}
+.imagem-email{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border: 1px solid black;
+    margin: 10px 0 10px 0;
+}
