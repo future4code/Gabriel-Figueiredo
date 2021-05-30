@@ -15,6 +15,7 @@ margin-left: 550px;
 
 export default class Home extends React.Component {
 
+    
     render() {
 
         return(
@@ -23,7 +24,11 @@ export default class Home extends React.Component {
                     <NomePlaylist >Minha Playlist</NomePlaylist > 
                 </div>
                 <div>
-                    <Botao>Voltar para Home</Botao>
+                    <Botao >Voltar para Home</Botao>
+                    
+                </div>
+                <div>
+                    <p>lista de contato</p>
                 </div>
             </div>
         )
