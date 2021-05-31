@@ -39,11 +39,13 @@ export default class App extends React.Component {
     render() {
         return(
             <div>  
-                <div>
-                  <Corpo
-                  
+                <Texto
                   />
-                </div>
+                <Corpo
+                  trocarPagina= {this.trocarPagina}
+                  alterandoPagina= {this.alterandoPagina}
+                  />
+                
                 <div>
                   <Footer/>
                 </div>

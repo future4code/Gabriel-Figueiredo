@@ -26,8 +26,8 @@ export default class Corpo extends React.Component {
                     <h1>Playlist</h1>
                 </div>
                 <div>
-                    <button>ver</button>
-                    
+                    <button onClick= {this.props.trocarPagina}>ver</button>
+                    {this.props.alterandoPagina}
                 </div>
                 <Conteudo>
                 <div>
