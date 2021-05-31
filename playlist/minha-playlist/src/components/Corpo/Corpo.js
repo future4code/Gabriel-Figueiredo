@@ -10,8 +10,7 @@ height:400px;
 display: flex;
 flex-direction: column;
 justify-content: center;
-margin-right: 400px;
-margin-top:200px;
+margin-left: 400px;
  `
 
 
@@ -23,14 +22,17 @@ export default class Corpo extends React.Component {
 
         return(
             <div>
-               <div>
-                    <h1>Minha Playlist</h1>
+                <div>
+                    <h1>Playlist</h1>
                 </div>
                 <div>
-                    <button onClick={() => this.props.trocarPagina()}>Ver Playlist</button >
-                    {this.props.alterandoPagina()}   
+                    <button>ver</button>
+                    
                 </div>
                 <Conteudo>
+                <div>
+                    <h1>Texto</h1>
+                </div>
                 <h3>Criar Playlist</h3>
                 <input type= "text" placeholder="nome da playlist"></input>
                 <button>Enviar</button>

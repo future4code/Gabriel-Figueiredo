@@ -1,22 +1,11 @@
 import React from 'react'
 import Corpo from './components/Corpo/Corpo'
+import Footer from './components/Footer/Footer'
 import Home from './components/Corpo/Home'
 import styled from 'styled-components'
 
-
-const ContainerCabecalho = styled.div`
-display: flex;
-justify-content: center;
-border: 1px solid blue;
-
-
-background-color: blue;
-
- `
-const Cor = styled.div `
-background-color: yellow;
-
-
+const Texto = styled.div `
+background-color: red;
  `
 
 
@@ -48,14 +37,17 @@ export default class App extends React.Component {
   }
 
     render() {
-       return(
-          
-            <ContainerCabecalho
-
-            trocarPagina={this.trocarPagina}
-            alterandoPagina={this.alterandoPagina}
-           /> 
-        
+        return(
+            <div>  
+                <div>
+                  <Corpo
+                  
+                  />
+                </div>
+                <div>
+                  <Footer/>
+                </div>
+            </div>
         )
     }
 }
