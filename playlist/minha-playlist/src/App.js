@@ -1,13 +1,13 @@
 import React from 'react'
-import Corpo from './components/Corpo/Corpo'
+import Contato from './components/CriarContato/Contato'
 import Footer from './components/Footer/Footer'
-import Home from './components/Corpo/Home'
+import Home from './components/CriarContato/Home'
 import styled from 'styled-components'
 
-const Texto = styled.div `
-background-color: red;
- `
 
+const ContainerApp = styled.div `
+background-color: #1C1C1C;
+ `
 
 export default class App extends React.Component {
 
@@ -24,32 +24,29 @@ export default class App extends React.Component {
     }
   }
 
-  alterandoPagina = () => {
+  renderizaPagina = () => {
 
     switch (this.state.playlist) {
       case "nome":
-        return <Corpo/>
+        return <Contato trocarPagina= {this.trocarPagina}/>
         
       case "musica":
-        return <Home/>
+        return <Home trocarPagina= {this.trocarPagina}/>
       default:
     }
   }
 
     render() {
         return(
-            <div>  
-                <Texto
-                  />
-                <Corpo
-                  trocarPagina= {this.trocarPagina}
-                  alterandoPagina= {this.alterandoPagina}
-                  />
+            <ContainerApp>  
+               <div>
+                 {this.renderizaPagina()}
+               </div>
+               <div>
+                 <Footer/>
+               </div>
                 
-                <div>
-                  <Footer/>
-                </div>
-            </div>
+            </ContainerApp>
         )
     }
 }

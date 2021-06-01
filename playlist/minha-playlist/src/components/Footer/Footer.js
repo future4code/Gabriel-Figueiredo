@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Rodape = styled.div `
+background-color: #3CB371;
 border: 1px solid blue;
  `
 
