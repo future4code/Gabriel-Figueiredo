@@ -44,7 +44,7 @@ margin: 40px 0 0 0;
 width: 100px;
 margin-left: 200px;
  `
-export default class Contato extends React.Component {
+export default class CriaPlaylist extends React.Component {
 
     state = {
         name: ""
@@ -76,7 +76,6 @@ export default class Contato extends React.Component {
     }
         
     render() {
-
         return(
             <div>
                 <ContainerTitulo>
@@ -85,7 +84,7 @@ export default class Contato extends React.Component {
                         <Titulo>Minha Playlist</Titulo>
                     </div>
                     <div>
-                        <BotaoVerPlaylist onClick= {this.props.trocarPagina}>Ver Playlist</BotaoVerPlaylist>
+                        <BotaoVerPlaylist onClick= {this.props.criaPlaylist}>Ver Playlist</BotaoVerPlaylist>
                         
                     </div>
                 </ContainerTitulo>

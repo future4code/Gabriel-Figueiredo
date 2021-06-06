@@ -1,7 +1,8 @@
 import React from 'react'
-import Contato from './components/CriarContato/Contato'
+import CriaPlaylist from './components/Playlist/CriaPlaylist'
 import Footer from './components/Footer/Footer'
-import Home from './components/CriarContato/Home'
+import ListaDePlaylist from './components/Playlist/ListaDePlaylist'
+import TelaDetalhes from './components/TelaDetalhes'
 import styled from 'styled-components'
 
 
@@ -12,26 +13,40 @@ background-color: #1C1C1C;
 export default class App extends React.Component {
 
   state = {
-    playlist: "nome"
+    paginaAtual: "criaPlaylist",
+    playlistSelecionada: null
   }
 
-  trocarPagina = () => {
-
-    if (this.state.playlist === "nome") {
-      this.setState({ playlist: "musica" })
-    } else if (this.state.playlist === "musica") {
-      this.setState({ playlist: "nome" })
-    }
+  
+  criaPlaylist = () => {
+  this.setState({paginaAtual: "listaPlaylist"})
   }
 
+
+  listPlaylist = (playlistSelecionada) => {
+    this.setState({paginaAtual: "detalhePlaylist", playlistSelecionada: playlistSelecionada})
+    
+  }
+
+  detalheList = () => {
+    this.setState({paginaAtual: "criaPlaylist"})
+  }
   renderizaPagina = () => {
 
-    switch (this.state.playlist) {
-      case "nome":
-        return <Contato trocarPagina= {this.trocarPagina}/>
+    switch (this.state.paginaAtual) {
+      case "criaPlaylist":
+        return <CriaPlaylist 
+        criaPlaylist= {this.criaPlaylist}/>
         
-      case "musica":
-        return <Home trocarPagina= {this.trocarPagina}/>
+      case "listaPlaylist":
+        return <ListaDePlaylist 
+        listPlaylist= {this.listPlaylist}
+        />
+      case "detalhePlaylist":
+        return <TelaDetalhes 
+        playlistSelecionada= {this.state.playlistSelecionada}
+        detalheList= {this.detalheList}
+        />
       default:
     }
   }
@@ -41,6 +56,7 @@ export default class App extends React.Component {
             <ContainerApp>  
                <div>
                  {this.renderizaPagina()}
+                 
                </div>
                <div>
                  <Footer/>

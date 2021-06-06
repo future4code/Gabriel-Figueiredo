@@ -22,14 +22,13 @@ margin-left: 550px;
 const BotaoHome = styled.button `
 background-color: black;
 color: white;
-margin-right: 50px;
+margin-left: 400px;
 margin-top: 25px;
 height: 40px;
-border-radius: 40px;
+border-radius: 20px;
  `
 const ContainerListaPlaylist = styled.div `
 display: flex;
-margin-left: 400px;
 color: white;
 font-weight: 800;
 font-family: Georgia, 'Times New Roman', Times, serif;
@@ -50,7 +49,7 @@ const Guardalista = styled.div `
 margin-bottom: 150px;
 
  `
-export default class Home extends React.Component {
+export default class ListaDePlaylist extends React.Component {
 
     state = {
         lista: []
@@ -68,7 +67,7 @@ export default class Home extends React.Component {
             }
         })
         .then((response) => {
-            console.log("teste",response.data.result.list);
+            console.log(response.data.result.list);
             this.setState({lista: response?.data.result.list})
         })
         .catch((error) => {
@@ -92,10 +91,9 @@ export default class Home extends React.Component {
        }) 
     }
     render() {
-console.log("deu",this.state.lista);
         const minhaPlaylist = this.state.lista.map((list) => {
-            return <GradePlaylist key= {list.id}>
-                {list.name}
+            return <GradePlaylist key= {list.url}>
+                <p onClick= {() =>this.props.listPlaylist(list)}>{list.name}</p>
                 <button onClick= {() =>this.removerPlaylist(list.id)}>remover</button>
                 </GradePlaylist>
         })
@@ -106,7 +104,7 @@ console.log("deu",this.state.lista);
                         <Titulo >Minha Playlist</Titulo > 
                     </div>
                     <div>
-                        <BotaoHome onClick= {this.props.trocarPagina}>Voltar para Home</BotaoHome>  
+                        <BotaoHome>Home</BotaoHome>  
                     </div>
                     <div>
                     
