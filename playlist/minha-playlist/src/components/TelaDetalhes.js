@@ -7,10 +7,7 @@ import styled from 'styled-components'
 const CardTexto = styled.div `
 display: flex;
  `
-const Card = styled.div `
-border: 1px solid red;
-height: 200px;
- `
+
 
 
 
@@ -67,22 +64,23 @@ export default class TelaDetalhes extends React.Component {
     })
     }
 
-    mostraMusica = (id) => {
-        axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/:${id}/tracks`,{
+    mostraMusica = () => {
+        axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${this.props.playlistSelecionada}/tracks`,{
             headers: {
                 Authorization: "Gabriel-Figueiredo-Munoz"
             }
         })
         .then((response) =>{
-            console.log(response.data.result.list);
+            console.log(response.data.result.tracks);
+            
         })
         .catch((error) => {
-            console.log(error.response.data);
+            console.log(error.response);
         })
          
     };
 
-    /*criaMusica = () => {
+    criaMusica = (id) => {
         const body = {
             name: this.state.inputMusica, 
             artist: this.state.inputArtist,
@@ -90,31 +88,30 @@ export default class TelaDetalhes extends React.Component {
         }
         axios.post(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${this.props.playlistSelecionada}/tracks`, body, {
             headers: {
-                Authorization: 'Gabriel-Figueiredo-Munoz'
+                Authorization: "Gabriel-Figueiredo-Munoz"
             }
         })
         .then((response) => {
-            console.log(response?.data);
-           
+            console.log(response)
         })
         .catch((error) => {
-            console.log(error.response?.data)
+            console.log(error.response)
         })
     }
-*/
+
 
     render() {
-        console.log("RRRR",this.state.detalhe);
-        const musica = this.state.detalhe.map((detalhe) => {
-            console.log(detalhe);
-            return <Card 
-            key= {detalhe.id}
-            id= {detalhe.id}
-            name= {detalhe.name}
-            artist= {detalhe.artist}
-            url= {detalhe.url}
+        console.log("RRRR",this.props.playlistSelecionada);
+        const musica = this.state.detalhe.map((detail) => {
+            return (
+                <div>
+                    {detail.name}
+                    {detail.artist}
+                    {detail.url}
+                    
+                </div>
+            )
             
-            />
         } )
         return(
             <div>
