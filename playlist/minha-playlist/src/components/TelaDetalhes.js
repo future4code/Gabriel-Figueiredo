@@ -14,14 +14,7 @@ display: flex;
 export default class TelaDetalhes extends React.Component {
     
     state = {
-        detalhe: [
-            {
-                "id": "006e1068-7941-45d3-9650-e2dd611eb0df",
-                "name": "infiel",
-                "artist": "marilia mendonca",
-                "url": "https://www.youtube.com/watch?v=1teK3Gj0jJc&list=RDMM4YQBisfZ0rk&index=11"
-            }
-        ],
+        detalhe: [],
         inputMusica: "",
         inputArtist: "",
         inputUrl: ""
@@ -64,14 +57,14 @@ export default class TelaDetalhes extends React.Component {
     })
     }
 
-    mostraMusica = () => {
-        axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${this.props.playlistSelecionada}/tracks`,{
+    mostraMusica = (Id) => {
+        axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${Id}/tracks`,{
             headers: {
                 Authorization: "Gabriel-Figueiredo-Munoz"
             }
         })
         .then((response) =>{
-            console.log(response.data.result.tracks);
+            console.log(response.data);
             
         })
         .catch((error) => {
@@ -80,7 +73,7 @@ export default class TelaDetalhes extends React.Component {
          
     };
 
-    criaMusica = (id) => {
+    /*criaMusica = (id) => {
         const body = {
             name: this.state.inputMusica, 
             artist: this.state.inputArtist,
@@ -97,7 +90,7 @@ export default class TelaDetalhes extends React.Component {
         .catch((error) => {
             console.log(error.response)
         })
-    }
+    }*/
 
 
     render() {

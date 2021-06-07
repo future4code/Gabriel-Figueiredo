@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Rodape = styled.div `
 background-color: #3CB371;
-border: 1px solid blue;
+height:100px;
  `
 
 
@@ -17,7 +17,7 @@ export default class Footer extends React.Component {
         return(
             <Rodape>
                 <div>
-                    <h2>Footer</h2>
+                    
                 </div>
             </Rodape>
         )

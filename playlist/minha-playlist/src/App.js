@@ -14,7 +14,7 @@ export default class App extends React.Component {
 
   state = {
     paginaAtual: "criaPlaylist",
-    playlistSelecionada: null
+    playlistSelecionada: null,
   }
 
   
