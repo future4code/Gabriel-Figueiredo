@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './components/Header/index'
 import RenderPage from './components/RenderPage';
 import styled from 'styled-components';
+import ClearMatches from './components/ClearMatches';
 
 const ContainerApp = styled.div `
 display: flex;
@@ -22,6 +23,7 @@ function App() {
       <Header/>
       <RenderPage/>
       </Container>
+      <ClearMatches/>
     </ContainerApp>
   )
 }

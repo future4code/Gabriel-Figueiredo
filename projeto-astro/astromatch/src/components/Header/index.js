@@ -22,7 +22,10 @@ font-size: 20px;
 function Header() {
   return (
    <ContainerHeader>
+     <div>
        <Texto><Texto1>Astro</Texto1><Texto2>match</Texto2></Texto>
+
+     </div>
    </ContainerHeader>
   )
 }
