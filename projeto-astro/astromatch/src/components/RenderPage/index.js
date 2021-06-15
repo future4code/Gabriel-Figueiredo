@@ -12,35 +12,35 @@ function RenderPage() {
         switch (pagina) {
             case "pageProfile":
                 return <Pageprofile
-                mudaPagina= {mudaPagina}
+                    mudaPagina={mudaPagina}
                 />
             case "pageMatchs":
                 return <PageMatchs
-                voltaPagina= {voltaPagina}
+                    voltaPagina={voltaPagina}
                 />
-            default:      
+            default:
         }
     }
 
-   const mudaPagina = () => {
-       setPagina (pagina === "pageProfile")
-       if(pagina !== "pageMatchs") {
-           setPagina("pageMatchs")
-       }
+    const mudaPagina = () => {
+        setPagina(pagina === "pageProfile")
+        if (pagina !== "pageMatchs") {
+            setPagina("pageMatchs")
+        }
 
     }
     const voltaPagina = () => {
-    setPagina (pagina === "pageMatchs")
-    if(pagina !== "pageProfile") {
-        setPagina("pageProfile")
+        setPagina(pagina === "pageMatchs")
+        if (pagina !== "pageProfile") {
+            setPagina("pageProfile")
+        }
     }
-    }
-  return (
-    <div>
-        
-       {renderizaPagina()} 
-    </div>
-  )
+    return (
+        <div>
+
+            {renderizaPagina()}
+        </div>
+    )
 }
 
 
