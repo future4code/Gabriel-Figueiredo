@@ -15,6 +15,7 @@ justify-content: center;
 *{
 padding: 0;
 margin: 0;
+
 }
 `
 const Container = styled.div`
@@ -23,6 +24,9 @@ width: 20vw;
 height: 95vh;
 margin-top: 10px;
 border-radius: 10px;
+@media screen and (max-width: 767px) {
+  width: 80vw;
+}
 `
 
 function App() {

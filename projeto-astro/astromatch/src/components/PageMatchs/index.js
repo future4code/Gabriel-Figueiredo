@@ -11,6 +11,7 @@ display: flex;
 flex-direction: column;
 justify-content: flex-start;
 margin-top: -50px;
+width: 20vw;
  `
 
 const Imagem = styled.img`
@@ -22,12 +23,14 @@ const ImagemPessoa = styled.img`
 width: 30px;
 height: 30px;
 border-radius: 50%;
-margin: 0 20px 0 0;
+padding: 5px;
  `
 const Container = styled.div`
  display: flex;
-margin-left: 10px;
-margin: 5px;
+ @media screen and (max-width: 767px) {
+  width: 80vw;
+  display: flex;
+}
   `
 const ContainerBotao = styled.p`
 margin-top: 0px;

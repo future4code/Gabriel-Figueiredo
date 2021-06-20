@@ -4,8 +4,6 @@ import { baseUrlClear } from '../../constant'
 import styled from 'styled-components'
 
 const Botao = styled.button ` 
-margin-top: 50px;
-margin-left: 75px;
 border-radius: 5px;
 height: 30px;
 font-size: 12px;
@@ -21,7 +19,9 @@ align-items: center;
 }
 `
 const Container = styled.div `
-margin-top: 350px;
+margin-top: 150px;
+margin-left: 70px;
+
  `
 
 

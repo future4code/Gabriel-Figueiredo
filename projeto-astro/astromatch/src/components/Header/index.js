@@ -8,12 +8,12 @@ justify-content: center;
 const Texto = styled.h4 `
 display: flex;
 flex-direction: row;
-margin: 0;
-padding: 0;
+padding: 10px;
 `
 const Texto1 = styled.h3 `
 color: red;
 font-size: 20px;
+
 `
 const Texto2 = styled.h3 `
 font-size: 20px;

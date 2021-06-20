@@ -4,7 +4,7 @@ import { baseUrlClear } from '../../constant'
 import styled from 'styled-components'
 
 const Botao = styled.p` 
-margin-top: 25px;
+
 border-radius: 5px;
 height: 30px;
 font-size: 12px;

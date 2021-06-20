@@ -7,19 +7,16 @@ import { baseUrlChoosePerson, baseUrlGetProfile } from '../../constant';
 const ContainerImagem = styled.div`
 display: flex;
 justify-content: flex-end;
-margin-top: -50px;
  `
 
 const Imagem = styled.img`
 width: 30px;
 height: 30px;
-margin-right: 10px;
-margin-top: 25px;
  `
 const ContainerButtonLike = styled.div`
 display: flex;
 justify-content: space-around;
-
+align-items: center;
  `
 const BotaoLike = styled.p`
 display: flex;
@@ -76,34 +73,42 @@ transform: translate(-200px) rotate(-45deg);
  `
 const Container = styled.div`
 position: relative;
-margin-left: 4px;
 height: 75vh;
-width: 19.5vw;
+width: 20vw;
 border-radius: 10px;
 box-shadow: rgb(117 117 117 / 77%) 0px 2px 10px 0px;
 -webkit-box-align: center;
 overflow: hidden;
-margin-top: 10px;
 animation:   ${props => {
-if (props.animation === "direita"){
-return "direita 0.9s  0s"
-}else if (props.animation === "esquerda"){
-return "esquerda 0.5s 0s"
-}else {
-return " "
+    if (props.animation === "direita") {
+      return "direita 0.9s  0s"
+    } else if (props.animation === "esquerda") {
+      return "esquerda 0.5s 0s"
+    } else {
+      return " "
+    }
+  }};
+  @media screen and (max-width: 767px) {
+  min-width: 80vw;
+  height: 75vh;
 }
-}};
  `
 const ContainerFotoPerfil = styled.div`
-position: absolute;
 width: 20vw;
 height: 80vh;
+
  `
 const ImagemPerfil = styled.img`
-width: 100%;
+width: 20vw;
 height: 100%;
 display: block;
 z-index: 1; 
+border-radius: 10px;
+
+@media screen and (max-width: 767px) {
+width: 80vw;
+height: 80vh;
+}
 
  `
 const NomePerfil = styled.p`
@@ -128,7 +133,6 @@ z-index: 1;
 const Bio = styled.div`
 margin-top: 60px;
  `
-
 function Pageprofile(props) {
 
   const [perfil, setPerfil] = useState([])
@@ -148,7 +152,7 @@ function Pageprofile(props) {
         console.log(error);
       })
   }
-  
+
 
   const like = () => {
 
@@ -202,13 +206,17 @@ function Pageprofile(props) {
         </ContainerTexto>
       </Container>
       <ContainerButtonLike >
-        <BotaoDesLike onClick= {() => { deslike()
-         setAnimation("esquerda")}}>X</BotaoDesLike>
-      <ClearProfile
-      profile= {profile}
-      />
-        <BotaoLike onClick= {() => { like() 
-        setAnimation("direita")}}>♥️</BotaoLike>
+        <BotaoDesLike onClick={() => {
+          deslike()
+          setAnimation("esquerda")
+        }}>X</BotaoDesLike>
+        <ClearProfile
+          profile={profile}
+        />
+        <BotaoLike onClick={() => {
+          like()
+          setAnimation("direita")
+        }}>♥️</BotaoLike>
       </ContainerButtonLike>
     </div>
   )
