@@ -3,14 +3,13 @@ import axios from 'axios'
 import { baseUrlClear } from '../../constant'
 import styled from 'styled-components'
 
-const Botao = styled.button ` 
-margin-top: 50px;
-margin-left: 75px;
+const Botao = styled.p` 
+margin-top: 25px;
 border-radius: 5px;
 height: 30px;
 font-size: 12px;
 background-color: yellow;
-width: 130px;
+width: 100px;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -18,18 +17,17 @@ align-items: center;
   background-color: black;
   color: yellow;
   transform: scale(1.2)
+  
 }
-`
-const Container = styled.div `
-margin-top: 350px;
  `
 
 
-function ClearMatches(props) {
+
+function ClearProfile(props) {
 
   const [remove, setRemove] = useState([])
 
-  const removeMatches = () => {
+  const removeProfile = () => {
     const body = {
       id: "wkbSFXRvGbKQv5uvilMu",
     }
@@ -37,7 +35,7 @@ function ClearMatches(props) {
       .then((response) => {
         console.log(response.data);
         setRemove(response.data);
-        props.matches()
+        props.profile()
         
       })
       .catch((error) => {
@@ -47,11 +45,11 @@ function ClearMatches(props) {
   }
 
   return (
-    <Container>
-      <Botao  onClick={removeMatches}>Remover Matches</Botao >
-    </Container>
+    <div>
+      <Botao onClick={removeProfile}>Remover Perfil</Botao>
+    </div>
   )
 }
 
 
-export default ClearMatches;
+export default ClearProfile;

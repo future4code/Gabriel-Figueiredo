@@ -7,6 +7,7 @@ import Pageprofile from '../PageProfile';
 function RenderPage() {
 
     const [pagina, setPagina] = useState("pageProfile")
+    
 
     const renderizaPagina = () => {
         switch (pagina) {

@@ -2,28 +2,38 @@ import React from 'react';
 import Header from './components/Header/index'
 import RenderPage from './components/RenderPage';
 import styled from 'styled-components';
-import ClearMatches from './components/ClearMatches';
+
 
 const ContainerApp = styled.div`
+background-image: url("https://img.freepik.com/vetores-gratis/desenho-de-bandeira-vermelha-com-decoracao-de-coracoes-em-neon_1017-29888.jpg?size=626&ext=jpg");
+background-repeat: no-repeat;
+background-size: cover;
+min-height: 100vh;
+min-width: 100vw;
 display: flex;
 justify-content: center;
-padding: 50px 0 0 0;
+*{
+padding: 0;
+margin: 0;
+}
 `
 const Container = styled.div`
-border: 1px solid black;
-width: 350px;
-height: 500px;
+background-color: #EEE9E9;
+width: 20vw;
+height: 95vh;
+margin-top: 10px;
 border-radius: 10px;
 `
 
 function App() {
+  
   return (
     <ContainerApp>
       <Container>
         <Header />
         <RenderPage />
       </Container>
-      <ClearMatches />
+      
     </ContainerApp>
   )
 }

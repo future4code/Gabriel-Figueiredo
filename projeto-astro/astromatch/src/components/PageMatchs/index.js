@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import ClearMatches from '../ClearMatches';
 import styled from 'styled-components'
 import { baseUrlMatchs } from '../../constant';
 
@@ -10,13 +11,12 @@ display: flex;
 flex-direction: column;
 justify-content: flex-start;
 margin-top: -50px;
-border: 1px solid blue;
  `
 
 const Imagem = styled.img`
 width: 30px;
 height: 30px;
-
+margin-top: 25px;
  `
 const ImagemPessoa = styled.img`
 width: 30px;
@@ -27,6 +27,7 @@ margin: 0 20px 0 0;
 const Container = styled.div`
  display: flex;
 margin-left: 10px;
+margin: 5px;
   `
 const ContainerBotao = styled.p`
 margin-top: 0px;
@@ -40,6 +41,10 @@ function PageMatchs(props) {
   const [perfilVisto, setPerfilVisto] = useState([])
 
   useEffect(() => {
+    matches()
+  },[])
+
+  const matches = () => {
 
     axios.get(baseUrlMatchs)
       .then((response) => {
@@ -48,19 +53,20 @@ function PageMatchs(props) {
       .catch((error) => {
         console.log(error);
       })
-  }, [setPerfilVisto])
-
-  console.log("Visto", perfilVisto);
+    }
   return (
     <ContainerMatchs>
       <ContainerBotao >
-        <Imagem src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmkBLaX2ZjCnAVsmtgc6ibWVW-1tn93FXuiRp06E0pqRkzd-b70kFbP20HUcdlZoTF_q0&usqp=CAU" onClick={props.voltaPagina}></Imagem>
+        <Imagem src="http://iconsetc.com/icons-watermarks/flat-circle-white-on-red/raphael/raphael_people/raphael_people_flat-circle-white-on-red_512x512.png" onClick={props.voltaPagina}></Imagem>
       </ContainerBotao >
       {perfilVisto.map((perfil) => {
         return <Container key={perfil.id}>
           <ImagemPessoa src={perfil.photo}></ImagemPessoa ><Paragrafo>{perfil.name}</Paragrafo>
         </Container>
       })}
+      <ClearMatches
+      matches={matches}
+      />
     </ContainerMatchs>
   )
 }

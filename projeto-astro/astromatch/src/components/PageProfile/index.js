@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ClearProfile from '../ClearProfile';
 import axios from 'axios';
 import styled from 'styled-components'
 import { baseUrlChoosePerson, baseUrlGetProfile } from '../../constant';
@@ -13,57 +14,104 @@ const Imagem = styled.img`
 width: 30px;
 height: 30px;
 margin-right: 10px;
+margin-top: 25px;
  `
 const ContainerButtonLike = styled.div`
 display: flex;
 justify-content: space-around;
-margin-top: -25px;
+
  `
 const BotaoLike = styled.p`
-color: red;
-font-size: 40px;
-border: 2px solid red;
-text-align: center;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: white;
 border-radius: 50%;
+color: green;
+font-size: 50px;
+margin-top: 10px;
+text-align: center;
 width: 50px;
 height: 50px;
+@keyframes direita {
+from{
+transform: translate(0) rotate(0);
+}
+to {
+transform: translate(200px) rotate(45deg);
+}
+}
+&:hover {
+  transform: scale(1.1);
+  background-color: green;
+  color: white;
+}
  `
 const BotaoDesLike = styled.p`
+display: flex;
+justify-content: center;
+align-items: center;
 background-color: white;
-color: black;
-font-size: 40px;
-border: 2px solid black;
-text-align: center;
 border-radius: 50%;
+color: red;
+font-size: 30px;
+font-weight: 900;
+text-align: center;
 width: 50px;
 height: 50px;
+margin-top: 10px;
+@keyframes esquerda {
+from{
+transform: translate(0) rotate(0);
+}
+to {
+transform: translate(-200px) rotate(-45deg);
+}
+}
+&:hover {
+  transform: scale(1.2);
+  background-color: red;
+  color: white;
+}
  `
 const Container = styled.div`
 position: relative;
-margin-left: 23px;
-border: 1px solid black;
-height: 350px;
-width: 300px;
+margin-left: 4px;
+height: 75vh;
+width: 19.5vw;
 border-radius: 10px;
 box-shadow: rgb(117 117 117 / 77%) 0px 2px 10px 0px;
 -webkit-box-align: center;
 overflow: hidden;
 margin-top: 10px;
+animation:   ${props => {
+if (props.animation === "direita"){
+return "direita 0.9s  0s"
+}else if (props.animation === "esquerda"){
+return "esquerda 0.5s 0s"
+}else {
+return " "
+}
+}};
  `
 const ContainerFotoPerfil = styled.div`
 position: absolute;
-width: 100%;
+width: 20vw;
+height: 80vh;
  `
 const ImagemPerfil = styled.img`
 width: 100%;
+height: 100%;
 display: block;
-z-index: 1;
+z-index: 1; 
+
  `
 const NomePerfil = styled.p`
 position: absolute;
 z-index: 1;
 color: white;
 font-weight: 700;
+margin-top: 50px;
  `
 const ContainerTexto = styled.div`
 height: 30%;
@@ -73,21 +121,24 @@ width: 100%;
 background-image: linear-gradient(to top, rgba(10, 20, 10, 0.5), transparent);
 color: white;
 display: flex;
-padding: 15px;
+flex-wrap: wrap;
+padding: 10px;
 z-index: 1;
  `
 const Bio = styled.div`
-margin-top: 20px;
+margin-top: 60px;
  `
+
 function Pageprofile(props) {
 
   const [perfil, setPerfil] = useState([])
+  const [animation, setAnimation] = useState("")
 
   useEffect(() => {
-    returnProfile()
+    profile()
   }, [])
 
-  const returnProfile = () => {
+  const profile = () => {
 
     axios.get(baseUrlGetProfile)
       .then((response) => {
@@ -97,7 +148,7 @@ function Pageprofile(props) {
         console.log(error);
       })
   }
-  console.log("perfil", perfil);
+  
 
   const like = () => {
 
@@ -109,7 +160,7 @@ function Pageprofile(props) {
       .then((response) => {
         console.log(response.data);
         setPerfil(response.data.isMatch)
-        returnProfile()
+        profile()
       })
       .catch((error) => {
         console.log(error);
@@ -125,7 +176,7 @@ function Pageprofile(props) {
     axios.post(baseUrlChoosePerson, body)
       .then((response) => {
         setPerfil(response.data.isMatch)
-        returnProfile()
+        profile()
       })
       .catch((error) => {
         console.log(error);
@@ -137,7 +188,7 @@ function Pageprofile(props) {
       <ContainerImagem>
         <Imagem src="https://icon-library.com/images/person_ok-512.png" onClick={props.mudaPagina}></Imagem>
       </ContainerImagem>
-      <Container>
+      <Container animation={animation}>
         <ContainerFotoPerfil>
           <ImagemPerfil src={perfil.photo}></ImagemPerfil>
         </ContainerFotoPerfil>
@@ -150,9 +201,14 @@ function Pageprofile(props) {
           </Bio>
         </ContainerTexto>
       </Container>
-      <ContainerButtonLike>
-        <BotaoDesLike onClick={deslike}>X</BotaoDesLike>
-        <BotaoLike onClick={like}>♥️</BotaoLike>
+      <ContainerButtonLike >
+        <BotaoDesLike onClick= {() => { deslike()
+         setAnimation("esquerda")}}>X</BotaoDesLike>
+      <ClearProfile
+      profile= {profile}
+      />
+        <BotaoLike onClick= {() => { like() 
+        setAnimation("direita")}}>♥️</BotaoLike>
       </ContainerButtonLike>
     </div>
   )
