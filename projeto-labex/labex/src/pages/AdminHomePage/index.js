@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 function AdminHomePage() {
@@ -22,6 +22,7 @@ function AdminHomePage() {
      <button onClick={pageHome}>Home</button>
      <button onClick={tripDetails}>Trip Details</button>
      <button onClick={createTrip}>Create trip</button>
+     
     </div>
   );
 }
