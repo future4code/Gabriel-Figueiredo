@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 
 function TripDetailsPage() {
 
-  const [detalhe, setDetalhe] = useState("")
+  const [detail, setDetailPage] = useState("")
   const history = useHistory()
 
   const pageHome = () => {
@@ -19,8 +19,8 @@ function TripDetailsPage() {
       }
     })
     .then((response) => {
-      console.log("Logado", response.data.trip.name);
-      setDetalhe(response.data.trip)
+      console.log("Logado", response.data.trip);
+      setDetailPage(response.data.trip)
     })
     .catch((error) => {
       console.log("não logado", error.response);

@@ -20,7 +20,8 @@ function LoginPage() {
       setSenha(e.target.value)
     }
 
-    const onSubmitLogin = () => {
+    const onSubmitLogin = (e) => {
+      e.preventDefault()
       const body = {
         email: email,
 	      password: senha
@@ -39,13 +40,13 @@ function LoginPage() {
       <div>
         <h1>Login</h1>
       </div>
-      <div>
-        <input type= "text" placeholder= "E-mail" value={email} onChange={onChangeEmail}></input>
-        <input type= "number" placeholder= "Senha" value={senha} onChange={onChangeSenha}></input>
-      </div>
+      <form onSubmit={onSubmitLogin}>
+        <input type= "text" placeholder= "E-mail" value={email} onChange={onChangeEmail} required></input>
+        <input type= "password" placeholder= "Senha" value={senha} onChange={onChangeSenha} required></input>
+        <button>Entrar</button>
+      </form>
 
      <button onClick={pageHome}>Voltar</button>
-     <button onClick={onSubmitLogin}>Entrar</button>
 
     </div>
   );
