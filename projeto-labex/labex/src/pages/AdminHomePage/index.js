@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 
 function AdminHomePage() {
 
-  const [detail, setDetailPage] = useState("")
+  const [detail, setDetailPage] = useState({})
 
   useEffect(() => {
     const token = localStorage.getItem("token")
@@ -28,19 +28,22 @@ function AdminHomePage() {
     history.goBack("/")
   }
 
-  const tripDetails = () => {
-    history.push("/admin/trips/:id")
+  const tripDetails = (name) => {
+    history.push(`/admin/trips/${name}`)
   }
 
   const createTrip = () => {
     history.push("/admin/trips/create")
   }
-  return (
+console.log("lista", detail.name);
+const listaViagem = detail.name && detail.name.map((viagem) => {
+  return <button onClick={() => tripDetails(viagem.name)}key={viagem.name}>{viagem.name}</button>
+})
+return (
     <div>
+      {listaViagem}
      <h1>AdminHomePage</h1>
-     <p>Nome : {detail.name}</p>
      <button onClick={pageHome}>Home</button>
-     <button onClick={tripDetails}>Trip Details</button>
      <button onClick={createTrip}>Create trip</button>
      
     </div>
